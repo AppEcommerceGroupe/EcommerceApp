@@ -1,0 +1,23 @@
+{
+  "name": "MVP-Starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon server/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "axios": "^0.21.0",
+    "cors": "^2.8.5",
+    "express": "^4.15.0",
+    "mysql2": "^3.10.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "sequelize": "^6.37.3"
+  }
+}
