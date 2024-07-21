@@ -1,0 +1,53 @@
+.bloc1 {
+display: flex;
+  }
+  .scroll-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .scroll-button {
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    height: 100%;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+  }
+  
+  .scroll-button.left {
+    left: 0;
+  }
+  
+  .scroll-button.right {
+    right: 0;
+  }
+  
+  .scroll-content {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    width: 100%;
+    padding: 20px 40px; /* Adjust padding if necessary */
+  }
+  
+  .scroll-item {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    flex: 0 0 auto;
+    margin: 0 10px;
+    padding: 20px;
+    width: 200px; /* Adjust width if necessary */
+  }
+  
+  .scroll-item img {
+    max-width: 100%;
+    height: auto;
+  }
+  

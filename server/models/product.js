@@ -30,6 +30,7 @@ module.exports = (sequelize, DataTypes) => {
         defaultValue: 0
       }
     });
+    
     return Product;
   };
   
