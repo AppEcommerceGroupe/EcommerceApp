@@ -1,0 +1,22 @@
+/* src/components/Navbar.css */
+.cart-dropdown {
+    position: absolute;
+    top: 50px; /* Adjust based on your navbar height */
+    right: 10px;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-shadow: 0 4px 8px #0000001a;
+    z-index: 1000;
+  }
+  
+  .cart-dropdown ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .cart-dropdown li {
+    padding: 5px 0;
+  }
+  

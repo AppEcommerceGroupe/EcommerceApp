@@ -1,4 +1,6 @@
 const { Product } = require('../models');
+const conn = require('../models/index');
+
 // const cloudinary = require('cloudinary').v2;
 
 // cloudinary.config({
@@ -6,6 +8,13 @@ const { Product } = require('../models');
 //   api_key: 'your_api_key',
 //   api_secret: 'your_api_secret'
 // });
+
+exports.getAll=async (callback) => {
+  const sql = 'SELECT * FROM `produit`';
+  conn.query(sql, function (error, results) {
+      callback(error, results);
+  });
+},
 
 exports.addProduct = async (req, res) => {
   const { name, description, price, quantity, promotion, rating } = req.body;
@@ -18,7 +27,6 @@ exports.getProducts = async (req, res) => {
   const products = await Product.findAll();
   res.json({ products });
 };
-
 exports.getProduct = async (req, res) => {
   const product = await Product.findByPk(req.params.id);
   res.json({ product });

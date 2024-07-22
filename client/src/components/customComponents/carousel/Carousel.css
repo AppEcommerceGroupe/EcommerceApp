@@ -1,0 +1,25 @@
+/* Carousel.css */
+.carousel {
+    position: relative;
+    width: 69%;
+    height: 324px;
+    overflow: hidden;
+    margin-left: 149px;
+  }
+  
+  .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .slide.active {
+    opacity: 1;
+  }
+  
