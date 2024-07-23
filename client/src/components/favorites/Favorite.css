@@ -1,0 +1,28 @@
+.favorites-container {
+    padding: 20px;
+  }
+  
+  .favorites-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .favorites-header h2 {
+    margin: 0;
+  }
+  .wishlist-text {
+    font-size: 18px; /* Adjust the font size as needed */
+    color: black; /* Use a lighter color */
+  }
+  
+  .move-all-to-bag {
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
