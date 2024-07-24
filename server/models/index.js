@@ -14,7 +14,7 @@ db.sequelize = sequelize;
 
 db.User = require('./user')(sequelize, DataTypes);
 db.Todo = require('./product')(sequelize, DataTypes);
-
+db.panier = require('./panier')(sequelize, DataTypes);
 Object.keys(db).forEach(modelName => {
   if (db[modelName].associate) {
     db[modelName].associate(db);

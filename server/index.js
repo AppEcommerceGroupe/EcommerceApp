@@ -4,8 +4,9 @@ const cors = require('cors');
 const morgan = require('morgan');
 const { sequelize } = require('./models');
 const productRoutes = require('./routes/productRoutes');
+const panierRoutes = require('./routes/panierRoutes');
 const authRoutes = require('./routes/authRoutes');
-const verifyToken  = require('./middlewares/authMiddleware.js');
+// const verifyToken  = require('./middlewares/authMiddleware.js');
 const db = require("../server/models/index.js");
 const app = express();
 
@@ -17,6 +18,7 @@ app.use(cors());
 
 
 app.use('/api/products', productRoutes);
+app.use('/api/panier', panierRoutes);
 app.use('/api/auth', authRoutes);
 
 
@@ -25,7 +27,7 @@ app.get('/', (req, res) => {
 });
 
 
-app.use(verifyToken);
+// app.use(verifyToken);
 
 
 const PORT = process.env.PORT || 3000;

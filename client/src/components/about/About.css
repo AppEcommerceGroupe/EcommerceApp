@@ -1,0 +1,88 @@
+.about-page {
+    padding: 20px;
+  }
+  
+  .breadcrumb {
+    margin: 70px 0 0 70px;
+  }
+  
+  .about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 50px 70px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .text-section {
+    flex: 1;
+    padding-right: 20px;
+  }
+  
+  .text-section h1 {
+    color: #333;
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  
+  .text-section p {
+    color: #666;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  
+  .image-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .image-section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  /* Statistics Section */
+  .statistics-section {
+    display: flex;
+    justify-content: space-around;
+    margin: 50px 70px;
+  }
+  
+  .stat-card {
+    background-color: white; /* White background by default */
+    color: #333; /* Dark text color by default */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    width: 200px;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .stat-card:hover {
+    background-color: #e74c3c; /* Red background on hover */
+    color: white; /* White text color on hover */
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .stat-card img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+  }
+  
+  .stat-card h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+  }
+  
+  .stat-card p {
+    font-size: 1em;
+  }
+  

@@ -3,6 +3,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/navbar/Layout';
 import Accueil from './components/accueil/Accueil';
 import Contact from './components/contact/Contact';
+import Panier from './components/panier/Panier';
+import About from './components/about/About';
+
 import ProductDisplay from './components/product/ProductDisplay';
 
 const App = () => {
@@ -11,8 +14,10 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Accueil />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/panier" element={<Panier />} />
+          <Route path="/about" element={<About />} />
           <Route path="product-display" element={<ProductDisplay />} />
-          <Route path="contact" element={<Contact />} />
         </Route>
       </Routes>
     </BrowserRouter>
