@@ -6,19 +6,19 @@ import Contact from './components/contact/Contact';
 import Panier from './components/panier/Panier';
 import About from './components/about/About';
 
+import ProductDisplay from './components/product/ProductDisplay';
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />} >
+        <Route path="/" element={<Layout />}>
           <Route index element={<Accueil />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/panier" element={<Panier />} />
           <Route path="/about" element={<About />} />
+          <Route path="product-display" element={<ProductDisplay />} />
         </Route>
-
-
       </Routes>
     </BrowserRouter>
   );
