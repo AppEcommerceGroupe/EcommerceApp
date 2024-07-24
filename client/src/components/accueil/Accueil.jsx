@@ -4,6 +4,7 @@ import Carousel from '../customComponents/carousel/Carousel';
 import './Accueil.css';
 import Countdown from 'react-countdown';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
 const Accueil = () => {
   const slides = [
@@ -20,6 +21,8 @@ const Accueil = () => {
     { name: 'HeadPhones', icon: '🎧' },
     { name: 'Gaming', icon: '🎮' },
   ];
+
+  const history = useHistory();
 
   useEffect(() => {
     fetchProductsOnSale();
@@ -80,14 +83,18 @@ const Accueil = () => {
     }
   };
 
+  const handleCategoryClick = (categoryName) => {
+    if (categoryName === 'Gaming') {
+      history.push('/product-display');
+    }
+  };
+
   return (
     <>
       <div className="bloc1">
         <NavbarVertical />
         <Carousel slides={slides} />
       </div>
-
-      
 
       <div className="flash-sales">
         <h2>Flash Sales</h2>
@@ -124,7 +131,11 @@ const Accueil = () => {
         <h2>Browse By Category</h2>
         <div className="categories-container">
           {categories.map((category, index) => (
-            <div className="category-item" key={index}>
+            <div
+              className="category-item"
+              key={index}
+              onClick={() => handleCategoryClick(category.name)}
+            >
               <div className="category-icon">{category.icon}</div>
               <div className="category-name">{category.name}</div>
             </div>
@@ -178,49 +189,99 @@ const Accueil = () => {
             </div>
             <div className="product-rating">⭐⭐⭐⭐⭐ (65)</div>
           </div>
-          
-        </div>
-        <div className="music-experience">
-        <div className="music-experience-content">
-          <h3>Categories</h3>
-          <h1>Enhance Your Music Experience</h1>
-          <Countdown date={threeDaysFromNow} renderer={renderer} />
-          <button className="buy-now-button">Buy Now!</button>
         </div>
         <img src="client/src/assets/jbl-3.jpg" alt="Music Experience" />
       </div>
       <div className="explore-products">
-  <div className="section-header">
-    <div className="section-title">
-      <span className="title-icon">🔍</span>
-      <span className="title-text">Explore Your Products</span>
-    </div>
-    <button className="view-all-button">View All</button>
-  </div>
-  <div className="products-container">
-    {/* Sample product data */}
-    <div className="product-card">
-      <img src="path/to/product1/image.png" alt="Product 1" className="product-image" />
-      <div className="product-name">Product 1</div>
-      <div className="product-price">
-        <span className="original-price">$200</span>
-        <span className="discounted-price">$180</span>
-      </div>
-      <div className="product-rating">⭐⭐⭐⭐⭐ (30)</div>
-    </div>
-    <div className="product-card">
-      <img src="path/to/product2/image.png" alt="Product 2" className="product-image" />
-      <div className="product-name">Product 2</div>
-      <div className="product-price">
-        <span className="original-price">$400</span>
-        <span className="discounted-price">$360</span>
-      </div>
-      <div className="product-rating">⭐⭐⭐⭐⭐ (20)</div>
-    </div>
-    {/* Add more product cards as needed */}
+        <div className="section-header">
+          <div className="section-title">
+            <span className="title-icon">🔍</span>
+            <span className="title-text">Explore Your Products</span>
+          </div>
+          <button className="view-all-button">View All</button>
+        </div>
+        <div className="products-container">
+          {/* Sample product data */}
+          <div className="product-card">
+            <img src="path/to/product1/image.png" alt="Product 1" className="product-image" />
+            <div className="product-name">Product 1</div>
+            <div className="product-price">
+              <span className="original-price">$200</span>
+              <span className="discounted-price">$180</span>
+            </div>
+            <div className="product-rating">⭐⭐⭐⭐⭐ (30)</div>
+          </div>
+          <div className="product-card">
+            <img src="path/to/product2/image.png" alt="Product 2" className="product-image" />
+            <div className="product-name">Product 2</div>
+            <div className="product-price">
+              <span className="original-price">$150</span>
+              <span className="discounted-price">$130</span>
+            </div>
+            <div className="product-rating">⭐⭐⭐⭐⭐ (50)</div>
+          </div>
+          <div className="product-card">
+            <img src="path/to/product3/image.png" alt="Product 3" className="product-image" />
+            <div className="product-name">Product 3</div>
+            <div className="product-price">
+              <span className="original-price">$100</span>
+              <span className="discounted-price">$90</span>
+            </div>
+            <div className="product-rating">⭐⭐⭐⭐⭐ (40)</div>
+          </div>
+          <div className="product-card">
+            <img src="path/to/product4/image.png" alt="Product 4" className="product-image" />
+            <div className="product-name">Product 4</div>
+            <div className="product-price">
+              <span className="original-price">$120</span>
+              <span className="discounted-price">$110</span>
+            </div>
+            <div className="product-rating">⭐⭐⭐⭐⭐ (60)</div>
+          </div>
   </div>
 </div>
 
+      <div className="featured">
+        <div className="section-header">
+          <div className="section-title">
+            <span className="title-icon">⭐</span>
+            <span className="title-text">New Arrival</span>
+          </div>
+        </div>
+        <div className="featured-products">
+          <div className="featured-product">
+            <img src="path/to/ps5/image.png" alt="PlayStation 5" className="featured-image" />
+            <div className="featured-content">
+              <h3>PlayStation 5</h3>
+              <p>Experience next-gen gaming with PlayStation 5</p>
+              <button className="shop-now">Shop Now</button>
+            </div>
+          </div>
+          <div className="featured-product">
+            <img src="path/to/womens-collection/image.png" alt="Women's Collection" className="featured-image" />
+            <div className="featured-content">
+              <h3>Women's Collection</h3>
+              <p>Explore the latest in women's fashion</p>
+              <button className="shop-now">Shop Now</button>
+            </div>
+          </div>
+          <div className="featured-product">
+            <img src="path/to/speakers/image.png" alt="Speakers" className="featured-image" />
+            <div className="featured-content">
+              <h3>Speakers</h3>
+              <p>High-quality sound for every occasion</p>
+              <button className="shop-now">Shop Now</button>
+            </div>
+          </div>
+          <div className="featured-product">
+            <img src="path/to/perfume/image.png" alt="Perfume" className="featured-image" />
+            <div className="featured-content">
+              <h3>Perfume</h3>
+              <p>Find your signature scent with our range of perfumes</p>
+              <button className="shop-now">Shop Now</button>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );

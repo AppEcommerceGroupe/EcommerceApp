@@ -3,17 +3,17 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/navbar/Layout';
 import Accueil from './components/accueil/Accueil';
 import Contact from './components/contact/Contact';
+import ProductDisplay from './components/product/ProductDisplay';
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />} >
+        <Route path="/" element={<Layout />}>
           <Route index element={<Accueil />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="product-display" element={<ProductDisplay />} />
+          <Route path="contact" element={<Contact />} />
         </Route>
-
-
       </Routes>
     </BrowserRouter>
   );
