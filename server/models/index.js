@@ -1,6 +1,5 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const config = require('../config/config.json') ;
-const { FORCE } = require('sequelize/lib/index-hints');
 console.log(config)
 const sequelize = new Sequelize(config.DB_NAME , config.DB_USER , config.DB_PASSWORD ,  {
   host: 'localhost',
