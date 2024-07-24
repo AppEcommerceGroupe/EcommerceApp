@@ -4,7 +4,7 @@ import Carousel from '../customComponents/carousel/Carousel';
 import './Accueil.css';
 import Countdown from 'react-countdown';
 import axios from 'axios';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';  // Changed to useNavigate
 
 const Accueil = () => {
   const slides = [
@@ -22,7 +22,7 @@ const Accueil = () => {
     { name: 'Gaming', icon: '🎮' },
   ];
 
-  const history = useHistory();
+  const navigate = useNavigate();  // Changed to useNavigate
 
   useEffect(() => {
     fetchProductsOnSale();
@@ -85,7 +85,7 @@ const Accueil = () => {
 
   const handleCategoryClick = (categoryName) => {
     if (categoryName === 'Gaming') {
-      history.push('/product-display');
+      navigate('/product-display');  // Changed to navigate
     }
   };
 
@@ -238,8 +238,8 @@ const Accueil = () => {
             </div>
             <div className="product-rating">⭐⭐⭐⭐⭐ (60)</div>
           </div>
-  </div>
-</div>
+        </div>
+      </div>
 
       <div className="featured">
         <div className="section-header">
