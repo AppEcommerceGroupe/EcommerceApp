@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import './Navbar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faSearch,faHeart, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 const ResponsiveNavbar = () => {
   const [showItems, setShowItems] = useState(false);
@@ -34,8 +35,10 @@ const ResponsiveNavbar = () => {
             </label>
           </li>
           <li>
+          
             <label className="icon" style={{margin: 7,}}>
-              <FontAwesomeIcon icon={faShoppingCart} />
+            <Link to="/panier">
+              <FontAwesomeIcon icon={faShoppingCart} /></Link> 
             </label>
           </li>
         </ul>
