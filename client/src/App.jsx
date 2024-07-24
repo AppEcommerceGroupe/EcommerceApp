@@ -4,6 +4,7 @@ import Layout from './components/navbar/Layout';
 import Accueil from './components/accueil/Accueil';
 import Contact from './components/contact/Contact';
 import Panier from './components/panier/Panier';
+import About from './components/about/About';
 
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
           <Route index element={<Accueil />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/panier" element={<Panier />} />
+          <Route path="/about" element={<About />} />
         </Route>
 
 

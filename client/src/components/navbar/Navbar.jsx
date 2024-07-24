@@ -20,7 +20,7 @@ const ResponsiveNavbar = () => {
           <div className={`items ${showItems ? 'show' : ''}`}>
             <li><a href="/">Home</a></li>
             <li><a href="/contact">Contact</a></li>
-            <li><a href="#">About</a></li>
+            <li><a href="/about">About</a></li>
             <li><a href="#">Sign Up</a></li>
           </div>
           <li className="search-icon">
