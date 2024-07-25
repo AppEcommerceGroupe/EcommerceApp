@@ -19,7 +19,7 @@ function CreateAccount() {
     const user = { username, email, password };
 
     try {
-      const response = await fetch('http://localhost:3000/api/users', {
+      const response = await fetch('http://localhost:3000/api/products/users', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

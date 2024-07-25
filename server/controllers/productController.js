@@ -1,5 +1,5 @@
 const { Product } = require('../models');
-const conn = require('../models/index');
+const { sequelize } = require('../models/index');
 
 // const cloudinary = require('cloudinary').v2;
 
@@ -9,11 +9,10 @@ const conn = require('../models/index');
 //   api_secret: 'your_api_secret'
 // });
 
-exports.getAll=async (callback) => {
-  const sql = 'SELECT * FROM `produit`';
-  conn.query(sql, function (error, results) {
-      callback(error, results);
-  });
+exports.getAll=async () => {
+  const sql = 'SELECT * FROM `products`';
+  const results =await sequelize.query(sql, { type: sequelize.QueryTypes.SELECT } );
+       return results;
 },
 
 exports.addProduct = async (req, res) => {

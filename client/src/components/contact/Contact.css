@@ -1,21 +1,22 @@
 /* Contact.css */
 
 .contact-container {
+  margin: 90px;
     display: flex;
     justify-content: space-between;
-    padding: 20px;
-    background-color: #f9f9f9;
+    /* padding: 20px; */
+    /* background-color: #f9f9f9; */
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
   }
   
   .contact-info {
     flex: 1;
-    margin-right: 20px;
+    margin-right: 25px;
     background: #fff;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1)
   }
   
   .info-section {
@@ -32,16 +33,16 @@
     margin: 10px 0;
   }
   
-  .info-section p {
+  /* .info-section p {
     margin: 5px 0;
-  }
+  } */
   
   .contact-form {
     flex: 2;
     background: #fff;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1)
   }
   
   .form-group {
@@ -56,6 +57,10 @@
     border: 1px solid #ccc;
     border-radius: 4px;
   }
+
+  input::placeholder {
+    color: transparent;
+  }
   
   .contact-form textarea {
     width: 100%;
@@ -63,7 +68,7 @@
     margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 4px;
-    height: 100px;
+    height: 200px;
   }
   
   .contact-form button {
@@ -78,8 +83,8 @@
 
   .contact-form span {
     
-    float: right;
-    position: relative;
+    /* float: right; */
+    /* position: relative; */
     /* right: 40px; */
     /* bottom: 187px; */
     /* top: 243px; */
@@ -92,6 +97,12 @@
     background-color: #e33e3e;
   }
   
+  .sendMessageSection {
+    display: flex;
+    /* margin-left: auto; */
+    float: right;
+    flex-direction: column;
+  }
   hr {
     border: none;
     height: 1px;

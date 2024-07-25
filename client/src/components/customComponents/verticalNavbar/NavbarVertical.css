@@ -1,49 +1,62 @@
-/* VerticalNavbar.css */
 .navbar {
-    width: 200px;
-    background-color: #f8f9fa;
-    padding: 10px;
-  }
-  
-  .navbar-list {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .navbar-item {
-    padding: 10px;
-    cursor: pointer;
-    position: relative;
-  }
-  
-  .navbar-item:hover {
-    background-color: #e9ecef;
-  }
-  
-  .mega-menu {
-    position: absolute;
-    left: 200px;
-    top: 0;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    display: flex;
-    padding: 10px;
-  }
-  
-  .mega-menu-section {
-    margin-right: 20px;
-  }
-  
-  .mega-menu-section h4 {
-    margin: 0 0 10px 0;
-  }
-  
-  .mega-menu-section ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .mega-menu-section ul li {
-    margin: 5px 0;
-  }
-  
+  width: 250px;
+  background-color: #ffffff;
+  padding: 10px;
+  border-right: 1px solid #ccc;
+}
+
+.navbar-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-item {
+  padding: 15px 10px;
+  cursor: pointer;
+  position: relative;
+  font-size: 16px;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.navbar-item:hover {
+  background-color: #f9f9f9;
+}
+
+.mega-menu {
+  position: absolute;
+  left: 250px;
+  top: 0;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.mega-menu-section {
+  margin-right: 40px;
+}
+
+.mega-menu-section h4 {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.mega-menu-section ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mega-menu-section ul li {
+  margin: 5px 0;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.mega-menu-section ul li:hover {
+  text-decoration: underline;
+}

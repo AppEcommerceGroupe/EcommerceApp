@@ -4,20 +4,32 @@ const cors = require('cors');
 const morgan = require('morgan');
 const { sequelize } = require('./models');
 const productRoutes = require('./routes/productRoutes');
+const panierRoutes = require('./routes/panierRoutes');
 
-
+// const verifyToken  = require('./middlewares/authMiddleware.js');
+const db = require("../server/models/index.js");
 const app = express();
+
+
+
 
 app.use(morgan('dev'));
 app.use(cors());
 app.use(express.json());
 
 
-app.use('/api', productRoutes);
+app.use('/api/products', productRoutes);
+app.use('/api/panier', panierRoutes);
+
+
 
 app.get('/', (req, res) => {
   res.send('Welcome to the E-commerce API');
 });
+
+
+// app.use(verifyToken);
+
 
 const PORT = process.env.PORT || 3000;
 sequelize.sync().then(() => {

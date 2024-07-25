@@ -1,4 +1,3 @@
-// VerticalNavbar.jsx
 import React, { useState } from 'react';
 import './NavbarVertical.css';
 
@@ -18,26 +17,26 @@ const NavbarVertical = () => {
       <ul className="navbar-list">
         <li
           className="navbar-item"
-          onMouseEnter={() => handleMouseEnter('menu1')}
+          onMouseEnter={() => handleMouseEnter('womensFashion')}
           onMouseLeave={handleMouseLeave}
         >
-          Menu 1
-          {activeMenu === 'menu1' && (
+          Woman's Fashion
+          {activeMenu === 'womensFashion' && (
             <div className="mega-menu">
               <div className="mega-menu-section">
-                <h4>Section 1</h4>
+                <h4>Tops</h4>
                 <ul>
-                  <li>Item 1</li>
-                  <li>Item 2</li>
-                  <li>Item 3</li>
+                  <li>Blouses</li>
+                  <li>T-Shirts</li>
+                  <li>Sweaters</li>
                 </ul>
               </div>
               <div className="mega-menu-section">
-                <h4>Section 2</h4>
+                <h4>Bottoms</h4>
                 <ul>
-                  <li>Item 4</li>
-                  <li>Item 5</li>
-                  <li>Item 6</li>
+                  <li>Jeans</li>
+                  <li>Skirts</li>
+                  <li>Shorts</li>
                 </ul>
               </div>
             </div>
@@ -45,32 +44,38 @@ const NavbarVertical = () => {
         </li>
         <li
           className="navbar-item"
-          onMouseEnter={() => handleMouseEnter('menu2')}
+          onMouseEnter={() => handleMouseEnter('mensFashion')}
           onMouseLeave={handleMouseLeave}
         >
-          Menu 2
-          {activeMenu === 'menu2' && (
+          Men's Fashion
+          {activeMenu === 'mensFashion' && (
             <div className="mega-menu">
               <div className="mega-menu-section">
-                <h4>Section 3</h4>
+                <h4>Shirts</h4>
                 <ul>
-                  <li>Item 7</li>
-                  <li>Item 8</li>
-                  <li>Item 9</li>
+                  <li>Casual Shirts</li>
+                  <li>Formal Shirts</li>
+                  <li>T-Shirts</li>
                 </ul>
               </div>
               <div className="mega-menu-section">
-                <h4>Section 4</h4>
+                <h4>Bottoms</h4>
                 <ul>
-                  <li>Item 10</li>
-                  <li>Item 11</li>
-                  <li>Item 12</li>
+                  <li>Jeans</li>
+                  <li>Trousers</li>
+                  <li>Shorts</li>
                 </ul>
               </div>
             </div>
           )}
         </li>
-        {/* Add more menu items as needed */}
+        <li className="navbar-item">Electronics</li>
+        <li className="navbar-item">Home & Lifestyle</li>
+        <li className="navbar-item">Medicine</li>
+        <li className="navbar-item">Sports & Outdoor</li>
+        <li className="navbar-item">Baby's & Toys</li>
+        <li className="navbar-item">Groceries & Pets</li>
+        <li className="navbar-item">Health & Beauty</li>
       </ul>
     </div>
   );
