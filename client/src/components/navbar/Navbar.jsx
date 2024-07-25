@@ -31,7 +31,10 @@ const ResponsiveNavbar = () => {
           </li>
           <li>
             <label className="icon" style={{margin: 7,}}>
+            <Link to="/favorites">
               <FontAwesomeIcon icon={faHeart} />
+              </Link>
+
             </label>
           </li>
           <li>
