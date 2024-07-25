@@ -9,6 +9,7 @@ const upload = multer({ dest: 'uploads/' });
 
 // router.post('/', authMiddleware, upload.single('image'), addProduct);
 // router.get('/', listProducts); // Route pour afficher tous les produits
+
 router.get('/getAll', async (req, res) => {
   console.log('Received request to /getAll');
   try {
