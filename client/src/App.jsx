@@ -7,6 +7,7 @@ import Panier from './components/panier/Panier';
 import About from './components/about/About';
 
 import ProductDisplay from './components/product/ProductDisplay';
+import Favorites from './components/favorites/Favorite';
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
           <Route path="/panier" element={<Panier />} />
           <Route path="/about" element={<About />} />
           <Route path="product-display" element={<ProductDisplay />} />
+          <Route path="favorites" element={<Favorites />} />
         </Route>
       </Routes>
     </BrowserRouter>
