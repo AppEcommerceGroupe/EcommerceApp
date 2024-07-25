@@ -1,14 +1,25 @@
 const express = require('express');
+const user = require('../controllers/user.js')
+const authController = require('../controllers/authcontroller.js');
+
 const multer = require('multer');
 const { getAll,addProduct, getProducts, getProduct, updateProduct, deleteProduct, updatePromotion, updateRating, listProducts } = require('../controllers/productController');
-// const authMiddleware = require('../middlewares/authMiddleware');
+
 const router = express.Router();
 const productController = require('../controllers/productController'); // Adjust the path if needed
 
-const upload = multer({ dest: 'uploads/' });
 
-// router.post('/', authMiddleware, upload.single('image'), addProduct);
-// router.get('/', listProducts); // Route pour afficher tous les produits
+ router.post('/login', authController.login);
+
+
+
+// User routes
+router.post('/users', authController.register);
+router.get('/users/getAll', user.getAllUser)
+router.get('/users/:id', user.getUser);
+router.put('/users/:id', user.updateUser);
+router.delete('/users/:id', user.deleteUser);
+
 router.get('/getAll', async (req, res) => {
   console.log('Received request to /getAll');
   try {
@@ -27,3 +38,5 @@ router.get('/:id', getProduct);
 // router.delete('/:id', authMiddleware, deleteProduct);
 
 module.exports = router;
+
+

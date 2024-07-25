@@ -16,9 +16,9 @@ exports.getAll=async () => {
 },
 
 exports.addProduct = async (req, res) => {
-  const { name, description, price, quantity, promotion, rating } = req.body;
+  const { name, description, price, quantity, promotion, rating,userId } = req.body;
   const result = await cloudinary.uploader.upload(req.file.path);
-  const newProduct = await Product.create({ name, description, price, imageUrl: result.secure_url, quantity, promotion, rating });
+  const newProduct = await Product.create({ name, description, price, imageUrl: result.secure_url, quantity, promotion, rating ,userId});
   res.status(201).json({ product: newProduct });
 };
 
