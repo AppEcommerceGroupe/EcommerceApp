@@ -5,9 +5,9 @@ import Accueil from './components/accueil/Accueil';
 import Contact from './components/contact/Contact';
 import Panier from './components/panier/Panier';
 import About from './components/about/About';
+import DisplayProduct from './components/product/ProductDisplay';
 
-import ProductDisplay from './components/product/ProductDisplay';
-//import Whishliste from './components/whishliste/Whishliste';
+
 const App = () => {
   return (
     <BrowserRouter>
@@ -17,7 +17,7 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/panier" element={<Panier />} />
           <Route path="/about" element={<About />} />
-          <Route path="product-display" element={<ProductDisplay />} />
+          <Route path="/product-display" element={<DisplayProduct />} />
         </Route>
       </Routes>
     </BrowserRouter>
