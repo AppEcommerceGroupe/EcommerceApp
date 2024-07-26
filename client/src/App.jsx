@@ -7,7 +7,7 @@ import Panier from './components/panier/Panier';
 import About from './components/about/About';
 
 import ProductDisplay from './components/product/ProductDisplay';
-
+//import Whishliste from './components/whishliste/Whishliste';
 const App = () => {
   return (
     <BrowserRouter>

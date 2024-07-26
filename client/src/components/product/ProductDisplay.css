@@ -1,109 +1,268 @@
 .product-container {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-  }
-  
-  .breadcrumb {
-    margin-bottom: 20px;
-  }
-  
-  .breadcrumb a {
-    text-decoration: none;
-    color: #555;
-  }
-  
-  .product-details {
-    display: flex;
-  }
-  
-  .product-images {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .main-image {
-    width: 100%;
-    height: auto;
-  }
-  
-  .thumbnail-images {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-  }
-  
-  .thumbnail-images img {
-    width: 48px;
-    height: 48px;
-    object-fit: cover;
-  }
-  
-  .product-info {
-    flex: 2;
-    padding-left: 20px;
-  }
-  
-  .product-info h1 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .rating {
-    font-size: 16px;
-    color: #ffa500;
-    margin-bottom: 10px;
-  }
-  
-  .price {
-    font-size: 20px;
-    color: #333;
-    margin-bottom: 10px;
-  }
-  
-  .description {
-    font-size: 14px;
-    color: #666;
-    margin-bottom: 20px;
-  }
-  
-  .options {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-  }
-  
-  .options label {
-    margin-bottom: 5px;
-    font-size: 14px;
-    color: #333;
-  }
-  
-  .options select,
-  .options input {
-    margin-bottom: 10px;
-    padding: 5px;
-    font-size: 14px;
-  }
-  
-  .buy-now {
-    padding: 10px 20px;
-    background-color: #ff4500;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    margin-bottom: 20px;
-  }
-  
-  .delivery {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .delivery p {
-    font-size: 14px;
-    color: #333;
-    margin: 5px 0;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.breadcrumb {
+  margin-bottom: 20px;
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  color: #555;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.product-details {
+  display: flex;
+}
+
+.product-images {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-image {
+  width: 100%;
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.thumbnail-images {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.thumbnail-images img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.thumbnail-images img:hover {
+  border-color: #ff4500;
+}
+
+.product-info {
+  flex: 2;
+  padding-left: 20px;
+}
+
+.product-info h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.rating {
+  font-size: 16px;
+  color: #ffa500;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #999;
+  margin-left: 10px;
+}
+
+.description {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.options label {
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #333;
+}
+
+.options select,
+.options input {
+  margin-bottom: 10px;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.buy-now {
+  padding: 10px 20px;
+  background-color: #ff4500;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+.buy-now:hover {
+  background-color: #e03c00;
+}
+
+.delivery {
+  display: flex;
+  flex-direction: column;
+}
+
+.delivery p {
+  font-size: 14px;
+  color: #333;
+  margin: 5px 0;
+}
+
+.related-items {
+  margin-top: 40px;
+}
+
+.related-items h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.related-item-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.related-item {
+  text-align: center;
+  max-width: 200px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.related-item img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 10px;
+}
+
+.related-item .price {
+  font-size: 16px;
+  color: #333;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.related-item .rating {
+  font-size: 14px;
+  color: #ffa500;
+}
+
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #000;
+  color: #fff;
+}
+
+.footer-section {
+  flex: 1;
+  padding: 10px;
+  min-width: 200px;
+}
+
+.footer-section h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.footer-section p, .footer-section a {
+  font-size: 14px;
+  color: #fff;
+  margin: 5px 0;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+.footer-section .subscribe {
+  display: flex;
+  align-items: center;
+}
+
+.footer-section .subscribe input[type="email"] {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px 0 0 4px;
+  outline: none;
+}
+
+.footer-section .subscribe button {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-left: none;
+  background-color: #ff4500;
+  color: #fff;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+.footer-section .subscribe button:hover {
+  background-color: #e03c00;
+}
+
+.footer-section .app-links {
+  display: flex;
+  gap: 10px;
+}
+
+.footer-section .app-links a img {
+  width: 120px;
+  height: auto;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 10px;
+  font-size: 12px;
+  color: #666;
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-bottom .social-links a {
+  color: #fff;
+  margin: 0 5px;
+  font-size: 18px;
+}
+
+.footer-bottom .social-links a:hover {
+  color: #ff4500;
+}
