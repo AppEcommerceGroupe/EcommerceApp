@@ -1,16 +1,17 @@
 import React, { useEffect, useRef, useState } from 'react';
 import NavbarVertical from '../customComponents/verticalNavbar/NavbarVertical';
 import Carousel from '../customComponents/carousel/Carousel';
+
 import './Accueil.css';
 import Countdown from 'react-countdown';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';  // Changed to useNavigate
 
 const Accueil = () => {
   const slides = [
-    'https://cdn.dribbble.com/users/6580427/screenshots/19984461/ezgif.com-gif-maker__3__still_2x.gif?resize=400x0',
-    'https://www.collidu.com/media/catalog/product/img1/0/2/021f8e11083b526001473718c6f39b0cc4c55b1d6e3a103e272eafecce88847a/perfume-brand-business-plan-slide1.png',
-    'https://qph.cf2.quoracdn.net/main-qimg-f11f46bb977d80d5c8dbacd1b4951475',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeRUIL9Kj6p_egY7T8A9GVVpjD99p7LRsPEygvdSFZRQdhldLLwD-jXLLeRIEcYlecow&usqp=CAU',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKvNxGg961uNE74g_gB2wArPxWAx49vDCa7A&s',
+    'https://www.jds.fr/medias/image/vetements-homme-50111-920-0-F.webp',
   ];
 
   const categories = [
@@ -22,30 +23,13 @@ const Accueil = () => {
     { name: 'Gaming', icon: '🎮' },
   ];
 
-  const navigate = useNavigate();
-  const [productsonsale, setProductsSale] = useState([]);
-  const scrollRef = useRef(null);
-  const threeDaysFromNow = Date.now() + 3 * 24 * 60 * 60 * 1000;
+  const navigate = useNavigate();  // Changed to useNavigate
 
   useEffect(() => {
     fetchProductsOnSale();
   }, []);
 
-  const fetchProductsOnSale = async () => {
-    try {
-      const response = await axios.get('http://localhost:3000/api/produit/getBySale');
-      setProductsSale(response.data);
-    } catch (error) {
-      console.error('Error fetching products on sale:', error);
-    }
-  };
-
-  const handleCategoryClick = (categoryName) => {
-    if (categoryName === 'Gaming') {
-      navigate('/product-display');
-    }
-  };
-
+  const threeDaysFromNow = Date.now() + 3 * 24 * 60 * 60 * 1000;
   const renderer = ({ days, hours, minutes, seconds, completed }) => {
     if (completed) {
       return <span className="countdown-complete">Countdown complete!</span>;
@@ -76,10 +60,40 @@ const Accueil = () => {
     }
   };
 
+  const scrollRef = useRef(null);
+  const [productsonsale, setProductsSale] = useState([]);
+
+  const scrollLeft = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollLeft -= 200;
+    }
+  };
+
+  const scrollRight = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollLeft += 200;
+    }
+  };
+
+  const fetchProductsOnSale = async () => {
+    try {
+      const response = await axios.get('http://localhost:3000/api/produit/getBySale');
+      setProductsSale(response.data);
+    } catch (error) {
+      console.error('Error fetching products on sale:', error);
+    }
+  };
+
+  const handleCategoryClick = (categoryName) => {
+    if (categoryName === 'Gaming') {
+      navigate('/product-display');  // Changed to navigate
+    }
+  };
+
   return (
     <>
-      <NavbarVertical />
-      <div className="carousel-container">
+      <div className="bloc1">
+        <NavbarVertical />
         <Carousel slides={slides} />
       </div>
 
@@ -87,8 +101,8 @@ const Accueil = () => {
         <h2>Flash Sales</h2>
         <Countdown date={threeDaysFromNow} renderer={renderer} />
       </div>
-      
       <div className="scroll-container-wrapper">
+        
         <div className="scroll-container" ref={scrollRef}>
           {productsonsale.map((item, index) => (
             <div className="scroll-item" key={index}>
@@ -106,6 +120,7 @@ const Accueil = () => {
             </div>
           ))}
         </div>
+       
       </div>
       <button className="view-all-products">View All Products</button>
 
@@ -134,6 +149,7 @@ const Accueil = () => {
           <button className="view-all-button">View All</button>
         </div>
         <div className="products-container">
+          {/* Sample product data */}
           <div className="product-card">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvehDWxosNif-KwglfwsD2DtGg-7WfsN3xVA&s" alt="The north coat" className="product-image" />
             <div className="product-name">The north coat</div>
@@ -144,7 +160,7 @@ const Accueil = () => {
             <div className="product-rating">⭐⭐⭐⭐⭐ (65)</div>
           </div>
           <div className="product-card">
-            <img src="https://media.gucci.com/style/DarkGray_Center_0_0_490x490/1699550104/547953_9C2ST_8746_001_082_0000_Light.jpg" alt="Gucci duffle bag" className="product-image" />
+            <img src="https://media.gucci.com/style/DarkGray_Center_0_0_490x490/1689180417/758664_FACK7_9768_001_084_0000_Light-medium-duffle-bag-with-web.jpg" alt="Gucci duffle bag" className="product-image" />
             <div className="product-name">Gucci duffle bag</div>
             <div className="product-price">
               <span className="original-price">$960</span>
@@ -153,7 +169,7 @@ const Accueil = () => {
             <div className="product-rating">⭐⭐⭐⭐⭐ (65)</div>
           </div>
           <div className="product-card">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-2LLdIy2lCmPaN8bYGoenKIS5HMHJgXq9HQ&s" alt="RGB liquid CPU Cooler" className="product-image" />
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw2imexOYu5CJrYrecz9WeRmbDL5Mn-N06-A&s" alt="RGB liquid CPU Cooler" className="product-image" />
             <div className="product-name">RGB liquid CPU Cooler</div>
             <div className="product-price">
               <span className="original-price">$180</span>
@@ -162,7 +178,7 @@ const Accueil = () => {
             <div className="product-rating">⭐⭐⭐⭐⭐ (65)</div>
           </div>
           <div className="product-card">
-            <img src="https://i.etsystatic.com/11628910/r/il/08b81c/2328038284/il_fullxfull.2328038284_dl9o.jpg" alt="Small BookShelf" className="product-image" />
+            <img src="https://img.buzzfeed.com/store-an-image-prod-us-east-1/tNoFEAk7c.png?output-format=jpg" alt="Small BookShelf" className="product-image" />
             <div className="product-name">Small BookShelf</div>
             <div className="product-price">
               <span className="original-price">$380</span>
@@ -171,84 +187,99 @@ const Accueil = () => {
             <div className="product-rating">⭐⭐⭐⭐⭐ (65)</div>
           </div>
         </div>
-        <img src="https://e7.pngegg.com/pngimages/341/69/png-clipart-ferris-wheel-illustration-graphic-design-stock-photography-cartoon-carnival-rides-blue-text.png" alt="Best Selling" className="best-selling-image" />
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCPfHHQWRsbruEfXsd0Sbl9by8pANL8UAlTw&s" alt="Music Experience" />
       </div>
-
-      <div className="new-arrival">
+      <div className="explore-products">
         <div className="section-header">
           <div className="section-title">
-            <span className="title-icon">🆕</span>
+            <span className="title-icon">🔍</span>
+            <span className="title-text">Explore Your Products</span>
+          </div>
+          <button className="view-all-button">View All</button>
+        </div>
+        <div className="products-container">
+          {/* Sample product data */}
+          <div className="product-card">
+            <img src="https://mk-media.mytek.tn/media/catalog/product/cache/8be3f98b14227a82112b46963246dfe1/d/q/dqd_1.jpg" alt="Product 1" className="product-image" />
+            <div className="product-name">Manette PS5</div>
+            <div className="product-price">
+              <span className="original-price">$200</span>
+              <span className="discounted-price">$180</span>
+            </div>
+            <div className="product-rating">⭐⭐⭐⭐⭐ (30)</div>
+          </div>
+          <div className="product-card">
+            <img src="https://i5.walmartimages.com/seo/Canon-EOS-Rebel-T7i-DSLR-Camera-with-18-55mm-Lens_a7321869-97ff-4a7f-aed0-8a939fafa692.9c0dabeb21ce0fb604e4b27da67eb8bc.jpeg" alt="Product 2" className="product-image" />
+            <div className="product-name">Camera</div>
+            <div className="product-price">
+              <span className="original-price">$150</span>
+              <span className="discounted-price">$130</span>
+            </div>
+            <div className="product-rating">⭐⭐⭐⭐⭐ (50)</div>
+          </div>
+          <div className="product-card">
+            <img src="https://i.ebayimg.com/images/g/cHAAAOSwYrpkrBx3/s-l1200.jpg" alt="Product 3" className="product-image" />
+            <div className="product-name">Jeans</div>
+            <div className="product-price">
+              <span className="original-price">$100</span>
+              <span className="discounted-price">$90</span>
+            </div>
+            <div className="product-rating">⭐⭐⭐⭐⭐ (40)</div>
+          </div>
+          <div className="product-card">
+            <img src="https://m.media-amazon.com/images/I/81lQM1JTlnL._AC_UF1000,1000_QL80_.jpg" alt="Product 4" className="product-image" />
+            <div className="product-name">Food Dog</div>
+            <div className="product-price">
+              <span className="original-price">$120</span>
+              <span className="discounted-price">$110</span>
+            </div>
+            <div className="product-rating">⭐⭐⭐⭐⭐ (60)</div>
+          </div>
+        </div>
+      </div>
+
+      <div className="featured">
+        <div className="section-header">
+          <div className="section-title">
+            <span className="title-icon">⭐</span>
             <span className="title-text">New Arrival</span>
           </div>
         </div>
-        <div className="featured-container">
-          <div className="featured-card" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1603791440384-56cd371ee9a7)' }}>
-            <h3>PlayStation 5</h3>
-            <p>Discover the latest PlayStation 5 games and accessories.</p>
-            <button>Shop Now</button>
+        <div className="featured-products">
+          <div className="featured-product">
+            <img src="https://www.tunisienumerique.com/wp-content/uploads/2022/08/ps5-1-1591910417.png" alt="PlayStation 5" className="featured-image" />
+            <div className="featured-content">
+              <h3>PlayStation 5</h3>
+              <p>Experience next-gen gaming with PlayStation 5</p>
+              <button className="shop-now">Shop Now</button>
+            </div>
           </div>
-          <div className="featured-card" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f)' }}>
-            <h3>Women's Collection</h3>
-            <p>Explore the newest trends in women's fashion.</p>
-            <button>Shop Now</button>
+          <div className="featured-product">
+            <img src="https://www.cougar.com.pk/cdn/shop/articles/New_Women_s_Collection.jpg?v=1662637654" alt="Women's Collection" className="featured-image" />
+            <div className="featured-content">
+              <h3>Women's Collection</h3>
+              <p>Explore the latest in women's fashion</p>
+              <button className="shop-now">Shop Now</button>
+            </div>
           </div>
-          <div className="featured-card" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1603032537085-9de1dae3808b)' }}>
-            <h3>Speakers</h3>
-            <p>Experience high-quality sound with our latest speakers.</p>
-            <button>Shop Now</button>
+          <div className="featured-product">
+            <img src="https://www.jbl.com/dw/image/v2/BFND_PRD/on/demandware.static/-/Sites-siteCatalog_JB_US_Imported/default/dw0c3ec204/categoryimage/Charge5.jpg?sw=800&sh=400" alt="Speakers" className="featured-image" />
+            <div className="featured-content">
+              <h3>Speakers</h3>
+              <p>High-quality sound for every occasion</p>
+              <button className="shop-now">Shop Now</button>
+            </div>
           </div>
-          <div className="featured-card" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1534531688091-a4588c1f2c34)' }}>
-            <h3>Perfume</h3>
-            <p>Find your signature scent in our perfume collection.</p>
-            <button>Shop Now</button>
+          <div className="featured-product">
+            <img src="https://www.bombayshavingcompany.com/cdn/shop/files/Fragrance.webp?v=1703064835" alt="Perfume" className="featured-image" />
+            <div className="featured-content">
+              <h3>Perfume</h3>
+              <p>Find your signature scent with our range of perfumes</p>
+              <button className="shop-now">Shop Now</button>
+            </div>
           </div>
         </div>
       </div>
-
-      <footer className="footer">
-        <div className="footer-column">
-          <h3>Subscribe</h3>
-          <p>Sign up to get the latest on sales, new releases, and more...</p>
-          <div className="subscribe-form">
-            <input type="email" placeholder="Enter your email" />
-            <button type="submit">Subscribe</button>
-          </div>
-        </div>
-        <div className="footer-column">
-          <h3>Support</h3>
-          <ul>
-            <li>FAQs</li>
-            <li>Shipping & Returns</li>
-            <li>Order Status</li>
-            <li>Contact Us</li>
-          </ul>
-        </div>
-        <div className="footer-column">
-          <h3>Account</h3>
-          <ul>
-            <li>My Account</li>
-            <li>Track Order</li>
-            <li>Wishlist</li>
-            <li>Privacy Policy</li>
-          </ul>
-        </div>
-        <div className="footer-column">
-          <h3>Quick Link</h3>
-          <ul>
-            <li>About Us</li>
-            <li>Gift Cards</li>
-            <li>Privacy Policy</li>
-            <li>Terms of Service</li>
-          </ul>
-        </div>
-        <div className="footer-column">
-          <h3>Download App</h3>
-          <div className="app-download">
-            <img src="path_to_google_play_image" alt="Google Play" />
-            <img src="path_to_app_store_image" alt="App Store" />
-          </div>
-        </div>
-      </footer>
     </>
   );
 };
