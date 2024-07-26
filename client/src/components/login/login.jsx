@@ -37,8 +37,8 @@ function Login() {
         <img src="https://img.freepik.com/photos-premium/ecran-telephone-portable-dans-modele-panier-livraison-achats-ligne_115594-2459.jpg?w=900" alt="E-commerce" />
       </div>
       <div className="form-container">
-        <h2>Log in to Exclusive</h2>
-        <h3>Enter your details below</h3>
+        <h1>Log in to Exclusive</h1>
+        <h2>Enter your details below</h2><br></br>
         <form onSubmit={handleSubmit}>
           <div className="inputBox">
             <input
@@ -59,12 +59,13 @@ function Login() {
               onChange={(e) => setPassword(e.target.value)}
               required
             />
-          </div>
-          <button className="btn" type="submit" disabled={loading}>
+          </div><br></br><br></br>
+         
+          <button className="but" onClick={() => navigate('/')} type="submit" disabled={loading}>
             {loading ? 'Logging in...' : 'Login'}
           </button>
           {error && <div className="error">{error}</div>}
-        </form>
+        </form><br></br><br></br>
         <p>Forgot password?</p>
       </div>
     </div>

@@ -87,9 +87,9 @@ function CreateAccount() {
               required
             />
           </div>
-          <button className="btn" type="submit">Create Account</button>
+          <button className="button" type="submit">Create Account</button>
         </form>
-        <p>Already have an account? <button onClick={() => navigate('/login')}>Login</button></p>
+        <p>Already have an account? <button className='but' onClick={() => navigate('/login')}>Login</button></p>
       </div>
     </div>
   );

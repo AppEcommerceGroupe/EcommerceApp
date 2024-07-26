@@ -9,7 +9,7 @@ import Panier from './components/panier/Panier';
 import About from './components/about/About';
 
 import ProductDisplay from './components/product/ProductDisplay';
-
+import Favorites from './components/favorites/Favorite';
 const App = () => {
   return (
     <BrowserRouter>
@@ -24,6 +24,7 @@ const App = () => {
           <Route path="product-display" element={<ProductDisplay />} />
           <Route path="/CreateAccount" element={<CreateAccount />} />
           <Route path="/login" element={<Login/>} />
+          <Route path="favorites" element={<Favorites />} />
         </Route>
       </Routes>
 

@@ -53,19 +53,52 @@ h2, h3 {
   margin-right: 100px;
 }
 
-.btn {
-  width: 40%;
-  padding: 10px;
+.button {
   background-color: #007bff;
   color: white;
+  border-style:dashed;
   border: none;
-  cursor: pointer;
-  font-size: 16px;
-  margin-top: 10px;
+  border: none;             /* Pas de bordure */
+  padding: 15px 40px;       /* Espacement intérieur */
+  text-align: center;       /* Alignement du texte */
+  text-decoration: none;    /* Pas de soulignement */
+  display: inline-block;    /* Affichage en ligne */
+  font-size: 16px;          /* Taille de police */
+  margin: 10px 2px;         /* Marges */
+  cursor: pointer;          /* Curseur en forme de main */
+  border-radius: 4px;       /* Bordures arrondies */
+  transition-duration: 0.4s;
+}
+.button:hover {
+  background-color: rgb(89, 198, 69);  /* Couleur de fond au survol */
+  color:white;           /* Couleur du texte au survol */
+  border: 2px solid white; /* Bordure colorée au survol */
 }
 
 .btn:disabled {
-  background-color: #aaa;
+  background-color: rgb(109, 109, 154);
+}
+.but {
+background-color: #007bff;
+color: white;
+border-style:dashed;
+border: none;
+border: none;             /* Pas de bordure */
+padding: 10px 20px;       /* Espacement intérieur */
+text-align: center;       /* Alignement du texte */
+text-decoration: none;    /* Pas de soulignement */
+display: inline-block;    /* Affichage en ligne */
+font-size: 16px;          /* Taille de police */
+margin: 10px 2px;         /* Marges */
+cursor: pointer;          /* Curseur en forme de main */
+border-radius: 4px;       /* Bordures arrondies */
+transition-duration: 0.4s;
+
+}
+.but:hover {
+  background-color: rgb(89, 198, 69);  /* Couleur de fond au survol */
+  color:white;           /* Couleur du texte au survol */
+  border: 2px solid white; /* Bordure colorée au survol */
 }
 
 .error {
